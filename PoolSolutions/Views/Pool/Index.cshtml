@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Pool>
+
+<h2>Pools</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Location</th>
+        <th>Type</th>
+    </tr>
+
+    @foreach (var pool in @Model)
+    {
+        <tr>
+            <td><a href=/Pool/ViewPool/@pool.PoolID>@pool.PoolID</a></td>
+            <td>@pool.PoolLocation</td>
+            <td>@pool.PoolType</td>
+        </tr>
+    }
+
+</table>

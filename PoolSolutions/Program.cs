@@ -1,7 +1,22 @@
+using MySql.Data.MySqlClient;
+using PoolSolutions.Models;
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IDbConnection>((s) =>
+{
+    IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("poolsolutions"));
+    conn.Open();
+    return conn;
+});
+
+
+
+builder.Services.AddTransient<IPoolRepository, PoolRepository>();
 
 var app = builder.Build();
 

@@ -1,0 +1,20 @@
+﻿@model Pool
+
+<h3>@Model.PoolID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>PoolID</th>
+        <th>PoolLocation</th>
+        <th>PoolType</th>
+    </tr>
+    <tr>
+        <td>@Model.PoolID</td>
+        <td>@Model.PoolLocation</td>
+        <td>@Model.PoolType</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Pool/UpdatePool/@Model.PoolID">Update this Pool</a>
+</div>

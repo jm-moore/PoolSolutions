@@ -1,0 +1,16 @@
+﻿@model Pool
+
+<h2>Update @Model.PoolLocation</h2>
+
+@using (Html.BeginForm("UpdatePoolToDatabase", "Pool", "Post"))
+{
+    <input asp-for="PoolID" type="hidden" value="@Model.PoolID" />
+
+    <label asp-for="PoolLocation" class="control-label">Location</label>
+    <input type="text" name="Location" class="form-control" value="@Model.PoolLocation" />
+
+    <label asp-for="PoolType" class="control-label">Type</label>    
+    <input type="text" name="Type" class="form-control" value="@Model.PoolType" />
+
+    <input type="submit" value="Update Pool" class="btn btn-primary" />
+}
