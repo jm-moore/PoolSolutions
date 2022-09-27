@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Chem>
+
+<h2>Chems</h2>
+<table class="table">
+    <tr>
+        <th>PoolID</th>
+        <th>PH</th>
+        <th>Chlorine</th>
+        <th>Bromine</th>
+        <th>Alkalinity</th>
+        <th>Stabilizer</th>
+    </tr>
+
+    @foreach (var chem in @Model)
+    {
+        <tr>
+            <td><a href=/Chem/ViewChem/@chem.PoolID>@chem.PoolID</a></td>
+            <td>@chem.PH</td>
+            <td>@chem.Chlorine</td>
+            <td>@chem.Bromine</td>
+            <td>@chem.Alkalinity</td>
+            <td>@chem.Stabilizer</td>
+        </tr>
+    }
+
+</table>

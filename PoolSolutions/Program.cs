@@ -17,6 +17,8 @@ builder.Services.AddScoped<IDbConnection>((s) =>
 
 
 builder.Services.AddTransient<IPoolRepository, PoolRepository>();
+builder.Services.AddTransient<IChemRepository, ChemRepository>();
+builder.Services.AddTransient<IMaintenanceRepository, MaintenanceRepository>();
 
 var app = builder.Build();
 

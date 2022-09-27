@@ -38,5 +38,20 @@ namespace PoolSolutions.Controllers
 
             return RedirectToAction("ViewPool", new { id = pool.PoolID });
         }
+        public IActionResult InsertPool()
+        {
+            var pool = new Pool();
+            return View(pool);
+        }
+        public IActionResult InsertPoolToDatabase(Pool poolToInsert)
+        {
+            repo.InsertPool(poolToInsert);
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeletePool(Pool pool)
+        {
+            repo.DeletePool(pool);
+            return RedirectToAction("Index");
+        }
     }
 }

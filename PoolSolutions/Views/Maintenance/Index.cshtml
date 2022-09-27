@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Maintenance>
+
+<h2>Maintenance</h2>
+<table class="table">
+    <tr>
+        <th>PoolID</th>
+        <th>CleanDate</th>
+        <th>Vacuumed</th>
+        <th>Brushed</th>
+        <th>Skimmed</th>
+        <th>Backwashed</th>
+        <th>Addedwater</th>
+    </tr>
+
+    @foreach (var maintenance in @Model)
+    {
+        <tr>
+            <td>@maintenance.PoolID</td>
+            <td>@maintenance.CleanDate</td>
+            <td>@maintenance.Vacuumed</td>
+            <td>@maintenance.Brushed</td>
+            <td>@maintenance.Skimmed</td>
+            <td>@maintenance.Backwashed</td>
+            <td>@maintenance.Addedwater</td>
+        </tr>
+    }
+
+</table>

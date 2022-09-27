@@ -1,0 +1,16 @@
+﻿@model Pool
+
+<h2>Create a New Pool</h2>
+
+@using (Html.BeginForm("InsertPoolToDatabase", "Pool", "Post"))
+{
+    <input asp-for="PoolID" type="hidden" value="" />
+
+    <label asp-for="PoolLocation" class="control-label">PoolLocation</label>
+    <input type="text" name="PoolLocation" class="form-control" value="" />
+
+    <label asp-for="PoolType" class="control-label">PoolType</label>
+    <input type="text" name="PoolType" class="form-control" value="" />
+    
+    <input type="submit" value="Create Pool" class="btn btn-primary" />
+}

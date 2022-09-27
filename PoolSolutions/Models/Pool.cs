@@ -10,6 +10,5 @@
         public string PoolLocation { get; set; }
         public string PoolType { get; set; }
 
-
     }
 }

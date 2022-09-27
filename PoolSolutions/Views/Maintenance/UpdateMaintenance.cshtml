@@ -1,0 +1,58 @@
+﻿@model Maintenance
+
+<h2>Update @Model.PoolID</h2>
+
+@using (Html.BeginForm("UpdateMaintenanceToDatabase", "Maintenance", "Post"))
+{
+    <input asp-for="PoolID" type="hidden" value="@Model.PoolID" />
+
+    <label asp-for="CleanDate" class="control-label">CleanDate</label>
+    <input type="text" name="CleanDate" class="form-control" value="@Model.CleanDate" />
+
+    <div class="form-group">
+        <label for="">Vacuumed</label>
+        <select class="form-control" name="Vacuumed"
+        value="@Model.Vacuumed">
+        <option>True</option>
+            <option>False</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Brushed</label>
+        <select class="form-control" name="Brushed"
+        value="@Model.Brushed">
+        <option>True</option>
+            <option>False</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Skimmed</label>
+        <select class="form-control" name="Skimmed"
+        value="@Model.Skimmed">
+        <option>True</option>
+            <option>False</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Backwashed</label>
+        <select class="form-control" name="Backwashed"
+        value="@Model.Backwashed">
+        <option>True</option>
+            <option>False</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Addedwater</label>
+        <select class="form-control" name="Addedwater"
+        value="@Model.Addedwater">
+        <option>True</option>
+            <option>False</option>
+    </select>
+    </div>
+
+    <input type="submit" value="Update Maintenace" class="btn btn-primary" />
+}
