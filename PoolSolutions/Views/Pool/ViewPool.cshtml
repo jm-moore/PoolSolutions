@@ -15,33 +15,33 @@
     </tr>
 </table>
 
-<div style="display: block">
-    <a href="/Pool/UpdatePool/@Model.PoolID">Update the ID, location, or type for this pool</a>
-</div>
+<li>
+<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Pool/UpdatePool/@Model.PoolID">Update the ID, location, or type</a> &nbsp;
+</li>
 
-<div style="display: block">
-    <a href="/Chem/ViewChem/@Model.PoolID">View the chemical levels for this pool</a>
-</div>
+<li>
+<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Chem/ViewChem/@Model.PoolID">View the chemical levels</a> &nbsp;
 
-<div style="display: block">
-    <a href="/Chem/UpdateChem/@Model.PoolID">Update the chemical levels for this pool</a>
-</div>
+<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Chem/UpdateChem/@Model.PoolID">Update the chemical levels</a> &nbsp;
+</li>
 
-<div style="display: block">
-    <a href="/Maintenance/ViewMaintenance/@Model.PoolID">View the maintenace for this pool</a>
-</div>
+<li>
+<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Maintenance/ViewMaintenance/@Model.PoolID">View the maintenace</a> &nbsp;
 
-<div style="display: block">
-    <a href="/Maintenance/UpdateMaintenance/@Model.PoolID">Update the maintenace for this pool</a>
-</div>
+<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Maintenance/UpdateMaintenance/@Model.PoolID">Update the maintenace</a> &nbsp;
+</li>
+
 
 <div style="display: block">
 
     @using (Html.BeginForm("DeletePool", "Pool", "Post"))
     {
         <input type="hidden" asp-for="PoolID" value="@Model.PoolID" />
+        <li>
         <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this pool" />
+        </li>
     }
 </div>
+
 
 

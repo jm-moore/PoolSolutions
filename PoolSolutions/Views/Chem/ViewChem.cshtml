@@ -11,6 +11,7 @@
         <th>Alkalinity</th>
         <th>Stabilizer</th>
     </tr>
+
     <tr>
         <td>@Model.PoolID</td>
         <td>@Model.PH</td>
@@ -20,3 +21,24 @@
         <td>@Model.Stabilizer</td>
     </tr>
 </table>
+
+@if(Model.PH >= 8.0)
+{
+    <p>Your pool needs PH Down. (Ideal PH range 7.0-7.8)</p>
+}
+@if(Model.PH <= 6.9)
+{
+    <p>Your pool needs PH Up. (Ideal PH range 7.0-7.8)</p>
+}
+@if(Model.Chlorine < 1)
+{
+    <p>Your pool needs Chlorine. (Ideal Chlorine range 1-4)</p>
+}
+@if(Model.Chlorine > 4)
+{
+    <p>Your pool has too much Chlorine. We suggest adding water and checking the levels again. (Ideal Chlorine range 1-4)</p>
+}
+@if(Model.Bromine < 1 && Model.Chlorine == 0)
+{
+    <p>Your hottub needs Bromine. (Ideal Bromine range 3-5)</p>
+}
