@@ -9,6 +9,6 @@
         public void UpdatePool (Pool pool);
 
         public void InsertPool(Pool poolToInsert);
-        public void DeletePool(Pool pool);
+        public void DeletePool(int PoolID);
     }
 }

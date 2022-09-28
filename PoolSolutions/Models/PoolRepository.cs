@@ -30,11 +30,11 @@ namespace PoolSolutions.Models
             _conn.Execute("INSERT INTO pools (PoolID, PoolLocation, PoolType) VALUES (@PoolID, @PoolLocation, @PoolType);",
                 new { PoolID = poolToInsert.PoolID, PoolLocation = poolToInsert.PoolLocation, PoolType = poolToInsert.PoolType});
         }
-        public void DeletePool(Pool pool)
+        public void DeletePool(int PoolID)
         {
-            _conn.Execute("DELETE FROM POOLS WHERE PoolID = @id;", new { id = pool.PoolID });
-            _conn.Execute("DELETE FROM CHEMS WHERE PoolID = @id;", new { id = pool.PoolID });
-            _conn.Execute("DELETE FROM MAINTENANCE WHERE PoolID = @id;", new { id = pool.PoolID });
+            _conn.Execute("DELETE FROM POOLS WHERE PoolID = @id;", new { id = PoolID });
+            _conn.Execute("DELETE FROM CHEMS WHERE PoolID = @id;", new { id = PoolID });
+            _conn.Execute("DELETE FROM MAINTENANCE WHERE PoolID = @id;", new { id = PoolID });
         }
     }
 }

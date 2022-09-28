@@ -1,0 +1,12 @@
+﻿@model Pool
+
+<h4>@Model.PoolID Information</h4>
+
+<div style="display: block"
+@using (Html.BeginForm("DeletePool", "Pool", "Put"))
+    {
+        <style> </style>
+        <input type="hidden" asp-for="PoolID" value="@Model.PoolID" />
+        <input type= "submit" onclick="return confirm('Are you sure?')" value="Delete this pool" />
+    }
+</div>

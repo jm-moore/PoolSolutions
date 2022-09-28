@@ -15,8 +15,8 @@ namespace PoolSolutions.Controllers
 
         public IActionResult Index()
         {
-            var products = repo.GetAllPools();
-            return View(products);
+            var pool = repo.GetAllPools();
+            return View(pool);
         }
         public IActionResult ViewPool(int id)
         {
@@ -48,9 +48,9 @@ namespace PoolSolutions.Controllers
             repo.InsertPool(poolToInsert);
             return RedirectToAction("Index");
         }
-        public IActionResult DeletePool(Pool pool)
+        public IActionResult DeletePool(int id)
         {
-            repo.DeletePool(pool);
+            repo.DeletePool(id);
             return RedirectToAction("Index");
         }
     }
