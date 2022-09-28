@@ -2,6 +2,8 @@
 
 <h3>@Model.PoolID Information</h3>
 
+
+
 <table class="table">
     <tr>
         <th>PoolID</th>
@@ -15,33 +17,104 @@
     </tr>
 </table>
 
-<li>
-<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Pool/UpdatePool/@Model.PoolID">Update the ID, location, or type</a> &nbsp;
-</li>
+<button> <a href="/Pool/UpdatePool/@Model.PoolID">Update pool info</a></button>
 
-<li>
-<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Chem/ViewChem/@Model.PoolID">View the chemical levels</a> &nbsp;
+<button> <a href="/Chem/ViewChem/@Model.PoolID">View chemical levels</a></button>
 
-<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Chem/UpdateChem/@Model.PoolID">Update the chemical levels</a> &nbsp;
-</li>
+<button> <a href="/Chem/UpdateChem/@Model.PoolID">Update chemical levels</a></button>
 
-<li>
-<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Maintenance/ViewMaintenance/@Model.PoolID">View the maintenace</a> &nbsp;
+<button> <a href="/Maintenance/ViewMaintenance/@Model.PoolID">View maintenace</a></button>
 
-<a class="btn btn-outline-secondary my-3 text-fancy semi-circle" href="/Maintenance/UpdateMaintenance/@Model.PoolID">Update the maintenace</a> &nbsp;
-</li>
+<button> <a href="/Maintenance/UpdateMaintenance/@Model.PoolID">Update maintenace</a></button>
 
 
-<div style="display: block">
+<style>
+table, th, td {
+  border: 1px solid;
+  text-align: center;
+}
+tr:nth-child(even) {background-color: lightgray;}
 
+a{color: white}
+
+</style>
+
+<style> html{background-image: url("https://drive.google.com/file/d/1LQryWe-zdskCs-fN5ppCu-CXuJkUD-7P/view?usp=sharing"); background-size: cover}</style>
+
+
+<button>
     @using (Html.BeginForm("DeletePool", "Pool", "Post"))
     {
+        <style> </style>
         <input type="hidden" asp-for="PoolID" value="@Model.PoolID" />
-        <li>
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this pool" />
-        </li>
+        <input type= "submit" onclick="return confirm('Are you sure?')" value="Delete this pool" />
     }
-</div>
+</button>
+
+
+
+
+<style>
+button {
+  appearance: button;
+  background-color: lightcoral;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 10px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 25%;
+}
+
+button:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+button:main,
+button:focus {
+  user-select: auto;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+button:disabled {
+  cursor: auto;
+}
+</style>
 
 
 

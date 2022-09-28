@@ -24,13 +24,13 @@
 
 @if(Model.PH >= 8.0)
 {
-    <p>Your pool needs PH Down. (Ideal PH range 7.0-7.8)</p>
+    <p>Your pool needs Muriatic Acid. (Ideal PH range 7.0-7.8)</p>
 }
 @if(Model.PH <= 6.9)
 {
     <p>Your pool needs PH Up. (Ideal PH range 7.0-7.8)</p>
 }
-@if(Model.Chlorine < 1)
+@if(Model.Chlorine < 1 && Model.Bromine == 0)
 {
     <p>Your pool needs Chlorine. (Ideal Chlorine range 1-4)</p>
 }
@@ -38,7 +38,19 @@
 {
     <p>Your pool has too much Chlorine. We suggest adding water and checking the levels again. (Ideal Chlorine range 1-4)</p>
 }
-@if(Model.Bromine < 1 && Model.Chlorine == 0)
+@if(Model.Bromine < 3 && Model.Bromine < 0 && Model.Chlorine == 0)
 {
     <p>Your hottub needs Bromine. (Ideal Bromine range 3-5)</p>
 }
+
+    <style>
+table, th, td {
+  border: 1px solid;
+  text-align: center;
+}
+tr:nth-child(even) {background-color: lightgrey;}
+
+p{text-decoration-line: underline; text-decoration-color: aqua; text-align: center; font-size: 25px}
+
+</style>
+
