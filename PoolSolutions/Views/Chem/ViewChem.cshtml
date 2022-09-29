@@ -2,6 +2,7 @@
 
 <h3>@Model.PoolID Information</h3>
 
+<body>
 <table class="table">
     <tr>
         <th>PoolID</th>
@@ -22,35 +23,74 @@
     </tr>
 </table>
 
-@if(Model.PH >= 8.0)
-{
-    <p>Your pool needs Muriatic Acid. (Ideal PH range 7.0-7.8)</p>
-}
-@if(Model.PH <= 6.9)
-{
-    <p>Your pool needs PH Up. (Ideal PH range 7.0-7.8)</p>
-}
-@if(Model.Chlorine < 1 && Model.Bromine == 0)
-{
-    <p>Your pool needs Chlorine. (Ideal Chlorine range 1-4)</p>
-}
-@if(Model.Chlorine > 4)
-{
-    <p>Your pool has too much Chlorine. We suggest adding water and checking the levels again. (Ideal Chlorine range 1-4)</p>
-}
-@if(Model.Bromine < 3 && Model.Bromine < 0 && Model.Chlorine == 0)
-{
-    <p>Your hottub needs Bromine. (Ideal Bromine range 3-5)</p>
-}
-
-    <style>
+<style>
 table, th, td {
   border: 1px solid;
   text-align: center;
+  font-family:'Dangrek', cursive;
+  font-size: 20px;
 }
 tr:nth-child(even) {background-color: lightgrey;}
 
-p{text-decoration-line: underline; text-decoration-color: aqua; text-align: center; font-size: 25px}
+p{text-align: left; font-size: 20px}
 
 </style>
 
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+
+
+@if(Model.PH >= 8.0)
+{
+    @*<p class="tooltip">Ideal PH range 7.0-7.8
+        <span class="tooltiptext">Add Muriatic Acid</span>
+    </p>*@
+  <p title="Add Muriatic Acid">Ideal PH range 7.0-7.8</p>
+}
+@if(Model.PH <= 6.9)
+{
+    <p title="Add PH up">Ideal PH range 7.0-7.8.</p>
+}
+@if(Model.Chlorine < 1 && Model.Bromine == 0)
+{
+    <p title="Add Chlorine">Ideal Chlorine range 1-4</p>
+}
+@if(Model.Chlorine > 4)
+{
+    <p title="Add Water">Ideal Chlorine range 1-4</p>
+}
+@if(Model.Bromine < 3 && Model.Bromine > 0 && Model.Chlorine == 0)
+{
+    <p title="Add Bromine">Ideal Bromine range 3-5</p>
+}
+</body>
+
+<style>
+    p{font-family:'Dangrek', cursive;
+  font-size: 20px}
+</style>

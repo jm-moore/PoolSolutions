@@ -32,6 +32,8 @@
 table, th, td {
   border: 1px solid;
   text-align: center;
+  font-family:'Dangrek', cursive;
+  font-size: 20px;
 }
 tr:nth-child(even) {background-color: lightgray;}
 
@@ -59,6 +61,11 @@ a{color: white}
 </button>
 </div>
 
+@*@if()
+{
+    <input type="submit" onclick"return confirm('Are you sure?')" value="Delete this pool"/>
+}
+*@
 
 
 
@@ -185,4 +192,7 @@ button:disabled {
   cursor: auto;
 }
 </style>
+
+<style> p{font-weight: 400; font-family: 'Dangrek', cursive; font-size: 25px}</style>
+<style> a{font-weight: 400; font-family: 'Dangrek', cursive; font-size: 20px}</style>
 

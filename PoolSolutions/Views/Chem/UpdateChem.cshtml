@@ -7,19 +7,19 @@
     <input asp-for="PoolID" type="hidden" value="@Model.PoolID" />
 
     <label asp-for="PH" class="control-label">PH</label>    
-    <input type="number" step="0.01" name="PH" class="form-control" value="@Model.PH" />
+    <input type="number" step="0.2" name="PH" class="form-control" value="@Model.PH" />
 
     <label asp-for="Chlorine" class="control-label">Chlorine</label>    
-    <input type="number" step="0.01" name="Chlorine" class="form-control" value="@Model.Chlorine" />
+    <input type="number" step="1.00" name="Chlorine" class="form-control" value="@Model.Chlorine" />
 
     <label asp-for="Bromine" class="control-label">Bromine</label>    
-    <input type="number" step="0.01" name="Bromine" class="form-control" value="@Model.Bromine" />
+    <input type="number" step="1.00" name="Bromine" class="form-control" value="@Model.Bromine" />
 
     <label asp-for="Alkalinity" class="control-label">Alkalinity</label>    
-    <input type="number" step="0.01" name="Alkalinity" class="form-control" value="@Model.Alkalinity" />
+    <input type="number" step="10.00" name="Alkalinity" class="form-control" value="@Model.Alkalinity" />
 
     <label asp-for="Stabilizer" class="control-label">Stabilizer</label>    
-    <input type="number" step="0.01" name="Stabilizer" class="form-control" value="@Model.Stabilizer" />
+    <input type="number" step="10.00" name="Stabilizer" class="form-control" value="@Model.Stabilizer" />
 
     <input type="submit" value="Update Chemicals" class="btn btn-primary" />
 }
