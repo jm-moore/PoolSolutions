@@ -37,40 +37,9 @@ p{text-align: left; font-size: 20px}
 
 </style>
 
-<style>
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-</style>
-
-
 @if(Model.PH >= 8.0)
 {
-    <p class="tooltip">Ideal PH range 7.0-7.8
-        <span class="tooltiptext">Add Muriatic Acid</span>
-    </p>
- // <p title="Add Muriatic Acid">Ideal PH range 7.0-7.8</p>
+    <p title="Add Muriatic Acid">Ideal PH range 7.0-7.8</p>
 }
 @if(Model.PH <= 6.9)
 {

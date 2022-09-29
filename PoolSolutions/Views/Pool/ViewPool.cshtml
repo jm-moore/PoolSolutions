@@ -36,38 +36,14 @@ table, th, td {
   font-size: 20px;
 }
 tr:nth-child(even) {background-color: lightgray;}
-
 a{color: white}
-
 </style>
-
-
-@*<button>
-    @using (Html.BeginForm("DeletePool", "Pool", FormMethod.Post, new { @class = "hello"}))
-    {
-        <input type="hidden" asp-for="PoolID" value="@Model.PoolID" />
-        <input type= "button" onclick="return confirm('Are you sure?')" value="Delete this pool" />
-    }
-</button>*@
-@*<button> <a href="/Pool/DeletePool/@Model.PoolID">Delete this pool</a></button>*@
-@*<style>
-.hello{background-color: red; font-size: 15px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; 
-</style>*@
-
 
 <div>
 <button>
 <a class=" col-lg-6" asp-area="" asp-controller="Pool" asp-action="DeletePool" asp-route-id="@Model.PoolID">Delete</a>
 </button>
 </div>
-
-@*@if()
-{
-    <input type="submit" onclick"return confirm('Are you sure?')" value="Delete this pool"/>
-}
-*@
-
-
 
 <style>
 button {
