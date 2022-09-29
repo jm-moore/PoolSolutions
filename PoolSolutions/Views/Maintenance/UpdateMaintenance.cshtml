@@ -4,8 +4,9 @@
 
 @using (Html.BeginForm("UpdateMaintenanceToDatabase", "Maintenance", "Post"))
 {
+    <div>
     <input asp-for="PoolID" type="hidden" value="@Model.PoolID" />
-
+    </div>
     <label asp-for="CleanDate" class="control-label">CleanDate</label>
     <input type="text" name="CleanDate" class="form-control" value="@Model.CleanDate" />
 
@@ -56,3 +57,7 @@
 
     <input type="submit" value="Update Maintenace" class="btn btn-primary" />
 }
+<style> label{font-family:'Dangrek', cursive;font-size: 20px;}</style>
+<style> option{font-family:'Dangrek', cursive;font-size: 20px;}</style>
+<style> select{font-family:'Dangrek', cursive;font-size: 20px;}</style>
+<style> div{font-family:'Dangrek', cursive;font-size: 20px;}</style>

@@ -4,8 +4,9 @@
 
 @using (Html.BeginForm("UpdatePoolToDatabase", "Pool", "Post"))
 {
+    <div>
     <input asp-for="PoolID" type="hidden" value="@Model.PoolID" />
-
+    </div>
     <label asp-for="PoolLocation" class="control-label">Location</label>
     <input type="text" name="PoolLocation" class="form-control" value="@Model.PoolLocation" />
 
@@ -14,4 +15,6 @@
 
     <input type="submit" value="Update Pool" class="btn btn-primary" />
 }
-
+<style> label{font-family:'Dangrek', cursive;font-size: 20px;}</style>
+<style> input{font-family:'Dangrek', cursive;font-size: 20px;}</style>
+<style> div{font-family:'Dangrek', cursive;font-size: 20px;}</style>
