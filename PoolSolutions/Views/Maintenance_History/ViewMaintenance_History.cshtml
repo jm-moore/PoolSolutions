@@ -1,0 +1,30 @@
+﻿@model Maintenance_History
+
+<h3>@Model.PoolID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Action</th>
+        <th>Revision</th>
+        <th>DateTime</th>
+        <th>PoolID</th>
+        <th>CleanDate</th>
+        <th>Vacuumed</th>
+        <th>Brushed</th>
+        <th>Skimmed</th>
+        <th>Backwashed</th>
+        <th>Addedwater</th>
+    </tr>
+    <tr>
+        <td>@Model.action</td>
+        <td>@Model.revision</td>
+        <td>@Model.dt_datetime</td>
+        <td>@Model.PoolID</td>
+        <td>@Model.CleanDate</td>
+        <td>@Model.Vacuumed</td>
+        <td>@Model.Brushed</td>
+        <td>@Model.Skimmed</td>
+        <td>@Model.Backwashed</td>
+        <td>@Model.Addedwater</td>
+    </tr>
+</table>

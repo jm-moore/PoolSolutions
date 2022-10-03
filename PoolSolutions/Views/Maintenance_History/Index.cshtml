@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Maintenance_History>
+
+<h2>Maintenance History</h2>
+<table class="table">
+    <tr>
+        <th>Action</th>
+        <th>Revision</th>
+        <th>DateTime</th>
+        <th>PoolID</th>
+        <th>CleanDate</th>
+        <th>Vacuumed</th>
+        <th>Brushed</th>
+        <th>Skimmed</th>
+        <th>Backwashed</th>
+        <th>Addedwater</th>
+    </tr>
+
+    @foreach (var product in @Model)
+    {
+        <tr>
+            <td>@product.action</td>
+            <td>@product.revision</td>
+            <td>@product.dt_datetime</td>
+            <td>@product.PoolID</td>
+            <td>@product.CleanDate</td>
+            <td>@product.Vacuumed</td>
+            <td>@product.Brushed</td>
+            <td>@product.Skimmed</td>
+            <td>@product.Backwashed</td>
+            <td>@product.Addedwater</td>
+        </tr>
+    }
+
+</table>

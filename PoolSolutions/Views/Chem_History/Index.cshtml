@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Chem_History>
+
+<h2>Chemicals History</h2>
+<table class="table">
+    <tr>
+        <th>Action</th>
+        <th>Revision</th>
+        <th>DT_DateTime</th>
+        <th>PoolID</th>
+        <th>PH</th>
+        <th>Chlorine</th>
+        <th>Bromine</th>
+        <th>Alkalinity</th>
+        <th>Stabilizer</th>
+    </tr>
+
+    @foreach (var chem_History in @Model)
+    {
+        <tr>
+            <td>@chem_History.Action</td>
+            <td>@chem_History.Revision</td>
+            <td>@chem_History.dt_datetime</td>
+            <td>@chem_History.PoolID</td>
+            <td>@chem_History.PH</td>
+            <td>@chem_History.Chlorine</td>
+            <td>@chem_History.Bromine</td>
+            <td>@chem_History.Alkalinity</td>
+            <td>@chem_History.Stabilizer</td>
+        </tr>
+    }
+
+</table>
